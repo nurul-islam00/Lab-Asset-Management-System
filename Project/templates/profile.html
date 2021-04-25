@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+
+  </head>
+  <body>
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Asset Management</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/instrument_list_s">Instrument List</a>
+        </li>
+
+
+
+
+
+
+      </ul>
+
+        <a href="/profile" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-user"></span> My profile
+        </a>
+
+
+
+
+    </div>
+  </div>
+
+</nav>
+   <div>
+
+       <p style="color:blue">
+     <form>
+        <p style="color:blue">
+         Registraion Number : {{item2.id}} <br>
+         Name : {{item2.name}} <br>
+       Email ID : {{item2.email}} <br>
+       Batch : {{item2.batch}} <br>
+       Hall : {{item2.hall}}<br>
+        </p>
+     </form>
+
+
+   </div>
+    <p style="color:blue">
+{% if c == 0 %}
+     You didn't take any Instruments from Electronics Lab
+     {% endif %}
+    {% if c == 1 %}
+      Your took instruments from electronics Lab with the following instrument ID<br>
+       {% for lists in item3 %}
+                 {{lists.ins_id}} <br>
+            {% endfor %}
+     {% endif %}
+   </p>
+   </p>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+
+  </body>
+</html>
